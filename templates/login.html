@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Sistema de Monitoreo de Agua</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eef3f7;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .login-container {
+            width: 420px;
+            padding: 35px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .login-container img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .login-container h2 {
+            margin-bottom: 30px;
+            color: #023e8a;
+        }
+
+        .login-container label {
+            display: block;
+            text-align: left;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .login-container button:hover {
+            background-color: #005f8f;
+        }
+
+        .users-info {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <!-- Imagen centrada -->
+    <img src="{{ url_for('static', filename='img/logo_agua.png') }}" alt="Calidad del Agua">
+
+    <h2>Sistema de Monitoreo<br>de Calidad del Agua</h2>
+
+    <form method="POST">
+        <label>Usuario</label>
+        <input type="text" name="username" placeholder="Ingrese su usuario" required>
+
+        <label>Contraseña</label>
+        <input type="password" name="password" placeholder="Ingrese su contraseña" required>
+
+        <button type="submit">Ingresar</button>
+    </form>
+
+    <div class="users-info">
+        <b>Usuarios de prueba</b><br>
+        usuario / 1234<br>
+        operador / 1234<br>
+        admin / 1234
+    </div>
+
+</div>
+
+</body>
+</html>

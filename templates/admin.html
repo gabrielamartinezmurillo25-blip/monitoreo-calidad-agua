@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Administrador</title>
+
+<meta http-equiv="Cache-Control" content="no-store" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<style>
+body { margin:0; font-family: Arial; }
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    background: #1a252f;
+    color: white;
+    position: fixed;
+}
+.sidebar h3 { text-align:center; padding:15px; }
+.sidebar a {
+    display:block;
+    padding:12px;
+    color:white;
+    text-decoration:none;
+}
+.sidebar a:hover { background:#2c3e50; }
+
+.content {
+    margin-left:240px;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h3>Administrador</h3>
+    <a href="#" onclick="mostrar('usuarios')">Usuarios</a>
+    <a href="#" onclick="mostrar('sensores')">Sensores</a>
+    <a href="#" onclick="mostrar('mapa')">Mapa / Red</a>
+    <a href="#" onclick="mostrar('reportes')">Reportes</a>
+    <a href="/logout">Cerrar Sesión</a>
+</div>
+
+<div class="content">
+
+<div id="usuarios">
+<h2>Gestión de Usuarios</h2>
+<p>Consulta y administración de usuarios del sistema.</p>
+</div>
+
+<div id="sensores" style="display:none;">
+<h2>Estado de Sensores</h2>
+<ul>
+<li>🟢 Activo</li>
+<li>🟠 Con inconvenientes</li>
+<li>🔴 Desactivado – requiere revisión</li>
+</ul>
+</div>
+
+<div id="mapa" style="display:none;">
+<h2>Mapa de Sensores</h2>
+<p>Visualización de sensores en la red mediante coordenadas.</p>
+<p>Permite agregar o eliminar sensores.</p>
+</div>
+
+<div id="reportes" style="display:none;">
+<h2>Reportes de Anomalías</h2>
+<p>Informe automático cuando un sensor está en estado 🔴.</p>
+<p>Incluye ubicación, estado y recomendación.</p>
+</div>
+
+</div>
+
+<script>
+function mostrar(id) {
+    document.getElementById('usuarios').style.display='none';
+    document.getElementById('sensores').style.display='none';
+    document.getElementById('mapa').style.display='none';
+    document.getElementById('reportes').style.display='none';
+    document.getElementById(id).style.display='block';
+}
+</script>
+
+</body>
+</html>
