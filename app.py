@@ -77,7 +77,4 @@ if __name__ == '__main__':
     app.run()
     
 
-@app.route('/logout')
-def logout():
-    session.clear()
-    return redirect(url_for('login'))
+
